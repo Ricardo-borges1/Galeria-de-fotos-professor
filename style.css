@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.titulo1{
+    color: white;
+}
+.titulo2{
+    color: red;
+}
+a{
+    text-decoration: none;
+}
+ul,ol,li{
+    list-style: none;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
+
+.galeria{
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    display: grid;
+    grid-template-areas: 
+    "f1 f1 f1 f1 f1 f2 f2 f2 f3 f3 f3"
+    "f1 f1 f1 f1 f1 f4 f4 f4 f5 f5 f5 "
+    "f6 f6 f6 f7 f7 f7 f8 f8 f8 f8 f8 ";
+    gap: 12px;
+}
+
+.foto{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.foto:nth-child(1){
+    grid-area: f1;
+    background-image: url(./img/simbolo.jpg);
+}
+
+.foto:nth-child(2){
+    grid-area: f2;
+    background-image: url(./img/foto2.webp);
+}
+
+.foto:nth-child(3){
+    grid-area: f3;
+    background-image: url(./img/foto3.jpeg);
+}
+
+.foto:nth-child(4){
+    grid-area: f4;
+    background-image: url(./img/foto4.jfif);
+}
+
+.foto:nth-child(5){
+    grid-area: f5;
+    background-image: url(./img/foto5.jpg);
+}
+
+.foto:nth-child(6){
+    grid-area: f6;
+    background-image: url(./img/foto6.jpg);
+}
+
+.foto:nth-child(7){
+    grid-area: f7;
+    background-image: url(./img/foto7.jpg);
+}
+
+.foto:nth-child(8){
+    grid-area: f8;
+    background-image: url(./img/foto8.webp);
+}
+
+.foto__info{
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    background-color: #0009;
+    color:red;
+    bottom: 0;
+    transform: translatey(100%);
+    transition: .5s;
+}
+
+.foto:hover > .foto__info{
+    transform: translate(0%);
+}
+
+.ver__mais{
+        display: grid;
+        place-self: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+.ver__mais a{
+        display: flex;
+        background-color:red;
+        border-radius: 50%;
+        color: white;
+        font-size: 1rem;
+        width: 150px;
+        height: 50px;
+       place-items: center;
+       justify-content: center;
+
+    }
+
+@media (max-width:768){
+    body{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+    }
+    .foto{
+        width: 100%;
+        height: 33vh;
+    }
+    
+
+}
